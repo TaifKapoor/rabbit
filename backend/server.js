@@ -18,9 +18,7 @@ const app = express();
 const PORT = process.env.PORT || 9000;
 
 // ✅ MIDDLEWARE - MUST BE BEFORE ROUTES
-app.use(cors({
-  origin:"https://rabbit-4wgu.vercel.app"
-}));
+app.use(cors());
 
 app.use(express.json()); // <<=== ये line route से पहले होनी चाहिए
 app.use(express.urlencoded({ extended: true }));
