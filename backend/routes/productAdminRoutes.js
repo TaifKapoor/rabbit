@@ -16,4 +16,26 @@ router.get('/', protect, admin, async (req, res) => {
 });
 
 
+// ✅ POST - Add new product (admin only)
+router.post('/', protect, admin, async (req, res) => {
+  try {
+    const product = new Product(req.body);
+    await product.save();
+
+    res.status(201).json({
+      success: true,
+      message: "Product added successfully",
+      product,
+    });
+  } catch (error) {
+    console.error("❌ Add error:", error.message);
+    res.status(500).json({
+      success: false,
+      message: "Failed to add product",
+      error: error.message,
+    });
+  }
+});
+
+
 export default router;

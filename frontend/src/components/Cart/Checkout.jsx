@@ -5,9 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { createCheckout } from '../../redux/slices/checkoutSlice';
 import axios from "axios";
 
-// import { createCheckout } from '../redux/slices/checkoutSlice'
-// import { useNavigate } from 'react-router-dom';
-
 
 const Checkout = () => {
 

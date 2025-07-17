@@ -18,6 +18,7 @@ import UserManagement from './components/Admin/UserManagement'
 import ProductManagement from './components/Admin/ProductManagement'
 import EditProducts from './components/Admin/EditProducts'
 import OrderManagement from './components/Admin/OrderManagement'
+import AddProduct from './components/Admin/AddProduct'
 
 import { Provider } from 'react-redux'
 import store from './redux/store'
@@ -49,6 +50,7 @@ function App() {
               </ProtectedRoute>
             }>
             <Route index element={<AdminHomePage />} />
+            <Route path='addproduct' element={<AddProduct/>} />
             <Route path='users' element={<UserManagement />} />
             <Route path='products' element={<ProductManagement />} />
             <Route path='products/:id/edit' element={<EditProducts />} />

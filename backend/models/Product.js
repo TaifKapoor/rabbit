@@ -44,7 +44,7 @@ const productSchema = new mongoose.Schema({
 
     collection: {
         type: String,
-        enum: ["Men", "Women", "Unisex"]
+        enum: ["Men", "Women", "Unisex", "Default Collection"]
     },
 
     gender: {
@@ -82,7 +82,8 @@ const productSchema = new mongoose.Schema({
 
     isPublished: {
         type: Boolean,
-        default: false,
+        // default: false,
+        default: true,
     },
 
     sku: {

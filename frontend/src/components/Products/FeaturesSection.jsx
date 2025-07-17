@@ -1,49 +1,51 @@
 import React from 'react'
-import { HiOutlineCreditCard, HiShoppingBag } from "react-icons/hi"
-import { HiArrowPathRoundedSquare } from "react-icons/hi2"
+import { FaTruck, FaUndo, FaLock, FaStar } from 'react-icons/fa';
 
+const features = [
+  {
+    icon: <FaTruck />,
+    title: "Free Shipping",
+    description: "Enjoy free delivery on orders over ₹999.",
+  },
+  {
+    icon: <FaUndo />,
+    title: "7-Day Return",
+    description: "Easy returns within 7 days of delivery.",
+  },
+  {
+    icon: <FaLock />,
+    title: "Secure Payments",
+    description: "Your payment is safe with 256-bit SSL.",
+  },
+  {
+    icon: <FaStar />,
+    title: "Top Quality",
+    description: "Only the best fabrics and latest styles.",
+  },
+];
 
 const FeaturesSection = () => {
   return (
-    <section className='py-16 px-4 bg-white'>
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-        {/* Feature 1 */}
+    <div className="bg-gradient-to-br from-white to-gray-100 py-20 px-4">
+      <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-14">
+        Why Shop With Us?
+      </h2>
 
-        <div className="flex flex-col items-center">
-            <div className="p-4 rounded-full mb-4">
-                <HiShoppingBag className='text-xl'/>
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        {features.map((feature, i) => (
+          <div
+            key={i}
+            className="bg-white/60 backdrop-blur-md rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 hover:scale-105"
+          >
+            <div className="flex items-center justify-center w-14 h-14 rounded-full bg-indigo-100 text-indigo-600 text-2xl mb-6 mx-auto">
+              {feature.icon}
             </div>
-            <h4 className="tracking-tighter mb-2">FREE INTERNATIONAL SHIPPING</h4>
-            <p className="text-gray-600 text-sm tracking-tighter">
-              On all orders over $100.00
-            </p>
-        </div>
-
-        {/* Feature 2 */}
-
-        <div className="flex flex-col items-center">
-            <div className="p-4 rounded-full mb-4">
-                <HiArrowPathRoundedSquare className='text-xl'/>
-            </div>
-            <h4 className="tracking-tighter mb-2">45 DAYS RETURN</h4>
-            <p className="text-gray-600 text-sm tracking-tighter">
-                Money back guarantee
-            </p>
-        </div>
-
-        {/* Feature 3 */}
-
-        <div className="flex flex-col items-center">
-            <div className="p-4 rounded-full mb-4">
-                <HiOutlineCreditCard className='text-xl'/>
-            </div>
-            <h4 className="tracking-tighter mb-2">SECURE CHECKOUT</h4>
-            <p className="text-gray-600 text-sm tracking-tighter">
-                100% Secured Checkout Process
-            </p>
-        </div>
+            <h3 className="text-lg font-semibold text-gray-800 text-center">{feature.title}</h3>
+            <p className="text-sm text-gray-600 mt-2 text-center">{feature.description}</p>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   )
 }
 
